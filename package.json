@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "local-deploy": "node-env-run --exec \"semantic-release --ci false\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "frago12",
   "license": "ISC",
   "devDependencies": {
+    "node-env-run": "^4.0.2",
     "prettier": "^2.6.2",
     "semantic-release": "^19.0.3"
   }
