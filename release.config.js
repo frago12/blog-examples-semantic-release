@@ -1,4 +1,18 @@
 const branches = ["main"];
 
-module.exports = { branches };
-  
+const plugins = [
+  "@semantic-release/commit-analyzer",
+  "@semantic-release/release-notes-generator",
+  "@semantic-release/changelog",
+  "@semantic-release/npm",
+  "@semantic-release/github",
+  [
+    "@semantic-release/git",
+    {
+      assets: ["CHANGELOG.md"],
+      message: "chore: ${nextRelease.version}\n\n${nextRelease.notes}",
+    },
+  ],
+];
+
+module.exports = { branches, plugins };
